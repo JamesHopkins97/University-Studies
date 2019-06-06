@@ -1,0 +1,44 @@
+#version 330
+// Diffuse vertex shader
+
+// specify uniform variables shared with fragment shader
+uniform mat4x4		g_ModelMatrix;
+uniform mat4x4		g_ViewMatrix;
+uniform mat4x4		g_ProjectionMatrix;
+uniform mat4x4		g_NormalMatrix;
+
+uniform vec4		lposition;
+uniform vec4		lambient;
+uniform vec4		ldiffuse;
+uniform vec3		lattenuation; // x=constant, y=linear, z=quadratic (x<0 means light is not active)
+
+uniform vec4		eyePos;
+
+// input vertex packet
+layout (location = 0) in vec4 position;
+layout (location = 2) in vec3 normal;
+layout (location = 8) in vec2 textureCoord;
+
+
+// output vertex packet
+out packet {
+	vec3	normal; 
+	vec3	lightDir; 
+	vec3	eyeDir; 
+	vec2	textureCoord;
+} outputVertex;
+
+
+
+void main(void) {
+	outputVertex.normal=( g_NormalMatrix * vec4(normal,1)).xyz; // normal vector in eye coordinates
+	
+	vec3 vertex = vec3(g_ModelMatrix * position); // vertex in eye coordinates (map to vec3 since gl_Vertex is a vec4)
+	
+	outputVertex.lightDir = (lposition.xyz - vertex);
+	outputVertex.eyeDir=(eyePos.xyz - vertex);
+	outputVertex.textureCoord=textureCoord.st;
+
+	gl_Position = g_ProjectionMatrix*g_ViewMatrix *g_ModelMatrix*position;
+}
+

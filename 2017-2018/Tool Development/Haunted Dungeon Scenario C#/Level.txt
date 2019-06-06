@@ -1,0 +1,39 @@
+Height=12
+Width=12
+FFFFWFFFWFFF
+FFFFWFFFFFFF
+FFFFWWWFWWWF
+FFFFWFFFFFWF
+WWWFWFWFWFWF
+FFFFWFWFWFWF
+FFFFWFWFWFWF
+FFFFWFWFWFWF
+FFFFWFWFFFWF
+FWWWWFFFWWWF
+FFFFWFWWWFFF
+FFFFFFWFFFFF
+StartPosition={0, 0}
+GoalPosition={11, 11}
+TimeToComplete=20
+NumEnemies=11
+{7, 3}
+{5, 8}
+{3, 7}
+{0, 6}
+{3, 10}
+{9, 5}
+{9, 10}
+{11, 0}
+{3, 3}
+{1, 7}
+{2, 6}
+NumFire=9
+{8, 1}
+{3, 4}
+{0, 9}
+{4, 11}
+{6, 9}
+{6, 3}
+{11, 9}
+{11, 3}
+{5, 4}

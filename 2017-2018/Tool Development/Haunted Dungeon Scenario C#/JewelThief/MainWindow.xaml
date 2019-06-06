@@ -1,0 +1,50 @@
+﻿<Window x:Class="WizardDungeon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WizardDungeon"
+        mc:Ignorable="d"
+        Title="Haunted Dungeon" Height="600" Width="731" KeyDown="tb_KeyDown" KeyUp="tb_KeyUp">
+    <Grid Margin="0,0,22,23" HorizontalAlignment="Right" Width="701">
+        <Button x:Name="btnLoad" Content="Load Level" HorizontalAlignment="Left" Height="19" Margin="416,0,0,14" VerticalAlignment="Bottom" Width="69" Click="btnLoad_Click"/>
+        <Button x:Name="btnStart" Content="Start Level" HorizontalAlignment="Left" Height="19" Margin="499,0,0,14" VerticalAlignment="Bottom" Width="68" Click="btnStart_Click" RenderTransformOrigin="0.157,0.78" IsEnabled="False" />
+        <Button x:Name="btnSave" Content="Save Level" HorizontalAlignment="Left" Height="19" Margin="582,0,0,14" VerticalAlignment="Bottom" Width="70" Click="btnSave_Click" IsEnabled="False" />
+        <Canvas x:Name="cvsMainScreen" Height="262" Margin="114,77,27,0" VerticalAlignment="Top" MouseLeftButtonDown="cvsMainScreen_MouseLeftButtonDown"/>
+        <TextBox x:Name="txtLevelDir" HorizontalAlignment="Left" Height="19" Margin="140,0,0,14" TextWrapping="Wrap" Text="..\..\..\Level1" VerticalAlignment="Bottom" Width="257"/>
+        <Label x:Name="label" Content="Level Location:" HorizontalAlignment="Left" Height="29" Margin="27,0,0,7" VerticalAlignment="Bottom" Width="97"/>
+        <Label x:Name="lblMsg" Content="" HorizontalAlignment="Left" Height="52" Margin="14,0,0,0" VerticalAlignment="Top" Width="223" FontSize="18"/>
+        <Label x:Name="lblNoLevel" Content="Error! This directory is not valid!" Height="26" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="237,34,0,0" Foreground="Red" Visibility="Hidden" />
+        <Grid>
+            <GroupBox x:Name="grpMapManipulation" Header="Add/Remove" HorizontalAlignment="Center" Height="151" Width="120" Margin="-500,-240,0,0" VerticalAlignment="Center"/>
+            <Grid>
+                <RadioButton x:Name="rdoWall" Content="Wall Modifier" HorizontalAlignment="Left" Height="20" Margin="48,111,0,406" IsChecked="False" IsEnabled="False" />
+                <RadioButton x:Name="rdoEnemy" Content="Enemy Modifier" HorizontalAlignment="Left" Height="20" Margin="48,111,0,343" IsChecked="False" IsEnabled="False" />
+                <RadioButton x:Name="rdoFire" Content="Fire Modifier" HorizontalAlignment="Left" Height="20" Margin="48,111,0,276" IsChecked="False" IsEnabled="False" />
+            </Grid>
+        </Grid>
+        <Grid>
+            <GroupBox x:Name="grpTexture" Header="Texture" HorizontalAlignment="Left" Height="175" Width="120" Margin="40, 120, 0, 0" VerticalAlignment="Center"/>
+            <Grid>
+                <CheckBox x:Name="checkKnightIcon" Content="Knight" Margin="-520,10,0,0" Height="20" Width="75" IsEnabled="False" />
+                <CheckBox x:Name="checkGhostIcon" Content="Ghost" Margin="-520,60,0,0" Height="20" Width="75" IsEnabled="False" />
+                <CheckBox x:Name="checkGoalIcon" Content="Goal" Margin="-520,110,0,0" Height="20" Width="75" IsEnabled="False" />
+                <CheckBox x:Name="checkWallIcon" Content="Wall" Margin="-520,160,0,0" Height="20" Width="75" IsEnabled="False" />
+                <CheckBox x:Name="checkFloorIcon" Content="Floor" Margin="-520,210,0,0" Height="20" Width="75" IsEnabled="False" />
+                <CheckBox x:Name="checkFireIcon" Content="Fire" Margin="-520,260,0,0" Height="20" Width="75" IsEnabled="False" />
+            </Grid>
+
+            <GroupBox x:Name="grpTime" Header="Time" HorizontalAlignment="Left" Height="50" Width="120" Margin="40,438,0,59" VerticalAlignment="Center" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="112*"/>
+                    <RowDefinition Height="382*"/>
+                    <RowDefinition Height="53*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="txtTime" Height="18" FontSize="8" HorizontalAlignment="Left" Margin="49,0,0,16" TextWrapping="Wrap" VerticalAlignment= "Bottom" Width="42" Grid.Row="1" IsEnabled="False" />
+                <Button x:Name="btnTime" Content="Set Time" FontSize="8" Height="18" HorizontalAlignment="Left" Margin="100,0,0,16" VerticalAlignment="Bottom" Width="40" Click="btnTime_Click" Grid.Row="1" IsEnabled="False"/>
+                <Label x:Name="lblTimeError" Content="Error! Cannot have less than 1 second." Margin="238,32,163,50" Height="30" Width="300" FontSize="16" Foreground="Red" Visibility="Hidden"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

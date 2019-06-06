@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core Types">
+      <UniqueIdentifier>{e33420ad-2969-4c6e-b4d1-affe42be6ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{d43c93de-892e-4d32-957d-433ddc7c05be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App Source Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="DirectXTK">
+      <UniqueIdentifier>{d31b680f-188e-492a-91ab-f3b78b19d598}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App Structures">
+      <UniqueIdentifier>{25bdbf89-997b-4794-b7a2-4dd326433a24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App Models">
+      <UniqueIdentifier>{cfa3213e-5022-401e-a283-f8c3b15b7cce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows Source Files">
+      <UniqueIdentifier>{bc183fd8-3dbf-4dbf-af23-3a430a21626b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\GUMemory.h">
+      <Filter>Core Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\DirectXTK\DDSTextureLoader.h">
+      <Filter>DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\DirectXTK\WICTextureLoader.h">
+      <Filter>DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LookAtCamera.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGDClock.h">
+      <Filter>Core Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGDConsole.h">
+      <Filter>Core Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Material.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Texture.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Effect.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mesh.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BaseModel.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utils.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\stdafx.h">
+      <Filter>Windows Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\targetver.h">
+      <Filter>Windows Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CBufferStructures.h">
+      <Filter>App Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\VertexStructures.h">
+      <Filter>App Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Triangle.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Box.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Model.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Grid.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Terrain.h">
+      <Filter>App Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Flare.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BlurUtility.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Quad.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ParticleSystem.h">
+      <Filter>App Models</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\GUMemory.cpp">
+      <Filter>Core Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGDClock.cpp">
+      <Filter>Core Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGDConsole.cpp">
+      <Filter>Core Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BaseModel.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Effect.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Material.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mesh.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Texture.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utils.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\stdafx.cpp">
+      <Filter>Windows Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Windows Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Animation.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Triangle.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Box.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Grid.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Terrain.cpp">
+      <Filter>App Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Flare.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BlurUtility.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Quad.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ParticleSystem.cpp">
+      <Filter>App Models</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\hlsl\basic_colour_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_colour_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_texture_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_texture_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_lighting_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\per_pixel_lighting_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\per_pixel_lighting_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\reflection_map_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\reflection_map_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\sky_box_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\sky_box_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\grass_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\grass_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\ocean_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\ocean_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\fire_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\fire_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\flare_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\flare_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\tree_ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\tree_vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

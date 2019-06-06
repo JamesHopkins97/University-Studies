@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F779B709-C566-4FEF-82F6-1E8D72DA7351}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DX11Proj</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)Source;$(ProjectDir)Libs;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)Libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86); $(ProjectDir)\Libs\Assimp\lib32;</LibraryPath>
+    <SourcePath>$(VC_SourcePath); </SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_XM_NO_INTRINSICS_;__GU_DEBUG_MEMORY__;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>D3DCompiler.lib;DirectXTK\bin\DirectXTK.lib;DXGI.lib;D3D11.lib; Assimp\lib32\assimp.lib; CoreStructures\CoreStructures.lib;CGImport3\CGImport3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+      <ObjectFileOutput>$(ProjectDir)\Shaders\cso\%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Libs\DirectXTK\DDSTextureLoader.h" />
+    <ClInclude Include="Libs\DirectXTK\WICTextureLoader.h" />
+    <ClInclude Include="Source\Animation.h" />
+    <ClInclude Include="Source\BaseModel.h" />
+    <ClInclude Include="Source\BlurUtility.h" />
+    <ClInclude Include="Source\Box.h" />
+    <ClInclude Include="Source\Camera.h" />
+    <ClInclude Include="Source\CBufferStructures.h" />
+    <ClInclude Include="Source\Effect.h" />
+    <ClInclude Include="Source\CGDConsole.h" />
+    <ClInclude Include="Source\Flare.h" />
+    <ClInclude Include="Source\Grid.h" />
+    <ClInclude Include="Source\Model.h" />
+    <ClInclude Include="Source\ParticleSystem.h" />
+    <ClInclude Include="Source\Quad.h" />
+    <ClInclude Include="Source\Scene.h" />
+    <ClInclude Include="Source\System.h" />
+    <ClInclude Include="Source\CGDClock.h" />
+    <ClInclude Include="Source\GUMemory.h" />
+    <ClInclude Include="Source\LookAtCamera.h" />
+    <ClInclude Include="Source\Material.h" />
+    <ClInclude Include="Source\Mesh.h" />
+    <ClInclude Include="Source\stdafx.h" />
+    <ClInclude Include="Source\targetver.h" />
+    <ClInclude Include="Source\Terrain.h" />
+    <ClInclude Include="Source\Texture.h" />
+    <ClInclude Include="Source\Triangle.h" />
+    <ClInclude Include="Source\Utils.h" />
+    <ClInclude Include="Source\VertexStructures.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Animation.cpp" />
+    <ClCompile Include="Source\BaseModel.cpp" />
+    <ClCompile Include="Source\BlurUtility.cpp" />
+    <ClCompile Include="Source\Box.cpp" />
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\Effect.cpp" />
+    <ClCompile Include="Source\CGDConsole.cpp" />
+    <ClCompile Include="Source\Flare.cpp" />
+    <ClCompile Include="Source\Grid.cpp" />
+    <ClCompile Include="Source\Model.cpp" />
+    <ClCompile Include="Source\ParticleSystem.cpp" />
+    <ClCompile Include="Source\Quad.cpp" />
+    <ClCompile Include="Source\Scene.cpp" />
+    <ClCompile Include="Source\System.cpp" />
+    <ClCompile Include="Source\CGDClock.cpp" />
+    <ClCompile Include="Source\GUMemory.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Material.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Terrain.cpp" />
+    <ClCompile Include="Source\Texture.cpp" />
+    <ClCompile Include="Source\Triangle.cpp" />
+    <ClCompile Include="Source\Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\hlsl\basic_colour_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_colour_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_lighting_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_texture_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\basic_texture_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\fire_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\fire_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\flare_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\flare_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\grass_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\grass_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\ocean_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\ocean_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\per_pixel_lighting_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\per_pixel_lighting_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\reflection_map_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\reflection_map_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\sky_box_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\sky_box_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\tree_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\hlsl\tree_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

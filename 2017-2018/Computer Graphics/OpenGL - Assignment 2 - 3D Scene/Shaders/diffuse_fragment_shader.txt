@@ -1,0 +1,65 @@
+#version 330
+
+// Phong fragment shader
+// specify uniform variables shared with fragment shader
+
+uniform vec4		lposition;
+uniform vec4		lambient;
+uniform vec4		ldiffuse;
+uniform vec3		lattenuation; // x=constant, y=linear, z=quadratic (x<0 means light is not active)
+
+uniform vec4		matAmbient;
+uniform vec4		matDiffuse;
+uniform vec4		matSpecular;
+
+// input packet
+in packet {
+	vec3	normal; 
+	vec3	lightDir; 
+	vec3	eyeDir; 
+	vec2	textureCoord;
+} inputFragment;
+
+
+// output packet
+layout (location = 0) out vec4 fragmentColour;
+
+uniform sampler2D texture1;
+
+//Function prototype
+vec4 calculateLight(vec3 lightPosition);
+
+
+void main(void) {
+
+	vec4 light1 = calculateLight(vec3(0.5,1.0,1.0));
+	vec4 light2 = calculateLight(vec3(1.0, 1.0, 0));
+	vec4 light3 = calculateLight(vec3(1.0, 0, 1.0));
+	vec4 light4 = calculateLight(vec3(0.8, 0.0, 1.0));
+
+	fragmentColour = light1 + light2;
+
+}
+
+//Function prototype
+vec4 calculateLight(vec3 lightPosition)
+{
+	float d = length(lightPosition);
+	float a = 1.0 / (lattenuation.x + lattenuation.y*d + lattenuation.z*d*d);
+	vec4 final_color = lambient * matAmbient;
+	vec3 N = normalize(inputFragment.normal);
+	vec3 L = normalize(lightPosition);
+	vec3 E = normalize(inputFragment.eyeDir);
+	
+	vec4 texColour = vec4(texture2D(texture1, inputFragment.textureCoord).xyz,1);
+
+	float lambertTerm = dot(N, L);
+	final_color += a * ldiffuse * matDiffuse * lambertTerm * texColour;	
+
+	//spec
+	vec3 R=reflect(L, N);
+	final_color += vec4(matSpecular.xyz*max(pow(dot(-E, R), matSpecular.w), 0), matDiffuse.a);
+
+
+	return final_color;
+}
